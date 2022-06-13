@@ -40,9 +40,7 @@ namespace ChallengesWithTestsMark8
         }
         public string GetGreeting(string nameOfPerson)
         {
-            var name = nameOfPerson;
-            var thing = (name == nameOfPerson && nameOfPerson == "") ? "Hello!" : $"Hello, {name}!" ;
-            return thing;
+            return (nameOfPerson == "") ? "Hello!" : $"Hello, {nameOfPerson}!" ;
         }
         public string GetHey()
         {
