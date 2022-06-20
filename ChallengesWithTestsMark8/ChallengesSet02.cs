@@ -8,13 +8,15 @@ namespace ChallengesWithTestsMark8
     {
         public bool CharacterIsALetter(char c)
         {
-            foreach (var letter in c.ToString())
-            {
-                var ch = letter;
-                var isLetter = char.IsLetter(ch);
-                return isLetter;
-            }
-            return false;
+            //foreach (var letter in c.ToString())
+            //{
+            //    var ch = letter;
+            //    var isLetter = char.IsLetter(ch);
+            //    return isLetter;
+            //}
+            //return false;
+
+            return char.IsLetter(c);  // Added during challenge review
         }
 
         public bool CountOfElementsIsEven(string[] vals)
@@ -25,35 +27,47 @@ namespace ChallengesWithTestsMark8
 
         public bool IsNumberEven(int number)
         {
-            foreach (char num in number.ToString())
-            {
-                var isNumberEven = (number % 2 == 0);
-                return isNumberEven;
-            }
-            return false;
+            //foreach (char num in number.ToString())
+            //{
+            //    var isNumberEven = (number % 2 == 0);
+            //    return isNumberEven;
+            //}
+            //return false;
+
+            var numberIsEven = (number % 2 == 0) ? true : false;  // Added during review
+            return numberIsEven;          
+            
         }
 
         public bool IsNumberOdd(int num)
         {
-            var isNumberOdd = num % 2 != 0;
-            return isNumberOdd;
+            //var isNumberOdd = num % 2 != 0;
+            //return isNumberOdd;
+
+            return (num % 2 != 0);  // Added during review
         }
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            if (numbers == null)
-            {
-                return 0;
-            }
+            //if (numbers == null)
+            //{
+            //    return 0;
+            //}
 
-            foreach (var number in numbers)
+            //foreach (var number in numbers)
+            //{
+            //    var num1 = numbers.Min();
+            //    var num2 = numbers.Max();
+            //    var sum = num1 + num2;
+            //    return sum;
+            //}
+            //return 0;
+
+            if (numbers == null || numbers.Count() == 0)
             {
-                var num1 = numbers.Min();
-                var num2 = numbers.Max();
-                var sum = num1 + num2;
-                return sum;
+                return 0;                                  // Added during review
             }
-            return 0;
+           return numbers.Min() + numbers.Max();
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
@@ -79,7 +93,9 @@ namespace ChallengesWithTestsMark8
             {
                 return 0;
             }
+
             var sum = 0;
+
             foreach (var num in numbers)
             {
                 if (num % 2 == 0)
@@ -95,21 +111,29 @@ namespace ChallengesWithTestsMark8
             {
                 return false;
             }
+
             var sum = 0;
+
             foreach (var num in numbers)
             {
                 sum += num;
             }
+
             if (sum % 2 == 0)
             {
                 return false;
             }
+
             return true;
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            if (number < 0) { return 0; }
+            if (number < 0) 
+            { 
+                return 0; 
+            }
+
             return number / 2; 
         }
     }
