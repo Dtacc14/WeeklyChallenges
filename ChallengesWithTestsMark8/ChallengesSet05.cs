@@ -22,6 +22,7 @@ namespace ChallengesWithTestsMark8
             }
         }
 
+
         public bool IsAscendingOrder(int[] numbers)
         {
             if (numbers == null || numbers.Length == 0)
