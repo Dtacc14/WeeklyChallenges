@@ -64,24 +64,22 @@ namespace ChallengesWithTestsMark8
             {
                 return "";
             }
-            string sentence = " ";
+            string sentence = "";
             foreach (var word in words)
             {
                 if (word.Trim().Length > 0)
                 {
                     sentence += word.Trim() + " ";
                 }
-            }            
-            sentence = sentence.Trim();
-            sentence += ".";
-            
-            return sentence; 
-            if (sentence.Length == 0 || sentence == "")
+            }                   
+             if (sentence.Length == 0)
             {
                 return "";
-            }            
+            } 
+            sentence = sentence.Trim();
+            sentence += "."; 
+            return sentence; 
                      
-            
         }
 
         public double[] GetEveryFourthElement(List<double> elements)
